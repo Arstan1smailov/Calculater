@@ -21,7 +21,6 @@
 
     <EditText
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:background="@drawable/ic_launcher_background"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingStart="15dp"
@@ -36,7 +35,6 @@
 
     <EditText
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:background="@drawable/ic_launcher_background"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingStart="15dp"
@@ -51,7 +49,6 @@
 
     <EditText
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:background="@drawable/ic_launcher_background"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingStart="15dp"
@@ -66,7 +63,6 @@
 
     <EditText
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:background="@drawable/ic_launcher_background"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingStart="15dp"

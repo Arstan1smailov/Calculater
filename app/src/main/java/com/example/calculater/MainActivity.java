@@ -10,11 +10,22 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tv_Result;
-    private Double firstVar;
-    private Double secondVar;
+    private Double firstVar = 0.0;
+    private Double secondVar = 0.0;
     private Boolean isOperationClick;
     private String operation;
     private Button btn_next;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +36,16 @@ public class MainActivity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                String result = tv_Result.getText().toString();
-                intent.putExtra("result", result);
-                startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    String result = tv_Result.getText().toString();
+                    intent.putExtra("result", result);
+                    startActivity(intent);
             }
         });
     }
 
     public void onNumberClick(View view) {
+
         switch (view.getId()){
             case R.id.btn_one:
                 setTv_Result("1");
@@ -93,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onOperationClick(View view) {
         btn_next.setVisibility(View.INVISIBLE);
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_percent:
                 setFirstVar();
                 isOperationClick = true;
@@ -119,11 +131,14 @@ public class MainActivity extends AppCompatActivity {
                 isOperationClick = true;
                 operation = "/";
                 break;
+            default:
+                isOperationClick = true;
             case R.id.btn_equals:
                 setSecondVar();
                 Double result = 0.0;
                 btn_next.setVisibility(View.VISIBLE);
                 switch (operation){
+                    
                     case "%":
                         result = (firstVar / 100.0f);
                         tv_Result.setText(result.toString());
@@ -145,8 +160,7 @@ public class MainActivity extends AppCompatActivity {
                         tv_Result.setText(result.toString());
                         break;
                 }
-                break;
-        }
+    }
     }
 
     public void setFirstVar() {
